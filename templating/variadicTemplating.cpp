@@ -99,7 +99,12 @@ int main()
 
     // example usgin the class print method
     CustomArray<int, double, std::string> array(1, 3.142, "Hello World");
+
+    // alternatively we can deduce the type using the compiler
+    CustomArray secondArray("Never Gonna Give", "You", "Up", 3.142, "Hello World", 12, 0.4);
+
     array.print();
+    secondArray.print();
 
     return 0;
 }
