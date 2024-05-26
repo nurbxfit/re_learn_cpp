@@ -1,12 +1,13 @@
 /**
- * Variadic templates, are a feature of C++ that allow use to write function or classes
- * that accept variable or varibales .
+ * Variadic templates are a feature of C++ that allow us to write functions or classes
+ * that accept a variable number of arguments.
  *
- * The variadic template function use an ellipsis `...` to allow a function to accept any numbers of parameters / templates
- * Internally it  use recursion to process each argument.
+ * The variadic template syntax uses an ellipsis `...` (pack expansion) to indicate
+ * that a function or class template can accept any number of parameters.
+ * Internally, variadic templates often use recursion to process each argument.
  *
- * variadic template provide type safety because athe type of all arguments are known at compile-time.
- * it is also very flexible.
+ * Variadic templates provide type safety because the types of all arguments are known
+ * at compile-time, making them flexible and powerful tools in template metaprogramming.
  */
 
 #include <iostream>
