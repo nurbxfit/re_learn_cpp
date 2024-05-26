@@ -47,6 +47,22 @@ public:
     void print() const
     {
         std::cout << "[ ";
+
+        /**
+         * Note on the apply function:
+         * std::apply() is a c++  17 function defined in the <tuple> header. It invokes a given function with arguments take from a tuple.
+         * In this example it takes a lambda function:
+         *
+         * [this](auto &&..args){
+         *  printElements(std::foward<decltype(args)>(args)...);
+         * }
+         * and the elements as second parameters.
+         *
+         * About the lambda function:
+         * the line: std::forward<decltype(args)>(args), ensure that the argument are forwarded with original value category (lvalue or rvalue)
+         * the iine: [this](auto &&..args) is the argument where it caprute `this` by refenrece to access the elements variable value.
+         * the auto &&...args, means for forwarding reference
+         */
         std::apply([this](auto &&...args)
                    { printElements(std::forward<decltype(args)>(args)...); }, elements);
     }
